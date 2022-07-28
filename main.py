@@ -5,23 +5,23 @@ op = 0
     
 def banks():
         os.system('cls')
-        banks = brasil_api.banks()
-        for bnk in banks:
-            print(f'{bnk["name"]} - {bnk["ispb"]}')
-        
-def cep():
+        banks = brasil_api.getBanks()
+        print('O tamanho da lista é: ', len(banks))
+        for bank in banks:
+            bank.print()
+def cep(): 
         os.system('cls')
         print('::::::::::|Busca por CEP|::::::::::')
         cep = input('Digite o CEP: ')
-        cep_lst = brasil_api.cep(cep)
-        for k, v in cep_lst.items():
-            print(f"{k} : {v}")
+        cep_lst = brasil_api.getCEP(cep)
+        for c in cep_lst:
+            c.print()
     
 def cnpj():
         os.system('cls')
         ('::::::::::|Busca por CNPJ|::::::::::')
         cnpj = input('Digite o CNPJ: ')
-        cnpj_lst = brasil_api.cnpj(cnpj)
+        cnpj_lst = brasil_api.getCNPJ(cnpj)
         for k, v in cnpj_lst.items():
             print(f"{k} : {v}")
     
@@ -29,7 +29,7 @@ def ddd():
         os.system('cls')
         print('::::::::::::|Lista de cidades por DDD|::::::::::::')
         ddd = input('Digite o DDD: ')
-        ddd_lst = brasil_api.ddd(ddd)
+        ddd_lst = brasil_api.getDDD(ddd)
         print(f"Estado: {ddd_lst['state']}")
         print('Cidades:')
         for v in ddd_lst['cities']:
@@ -39,7 +39,7 @@ def feriados():
         os.system('cls')
         print(':::::::|Listar os feriados nacionais de determinado ano|:::::::')
         ano = input('Digite o ano: ')
-        ano_lst = brasil_api.feriado(ano)
+        ano_lst = brasil_api.getFeriado(ano)
         print('-----------------------------------')
         for fer in ano_lst:
             print(f"Nome: {fer['name']}")
