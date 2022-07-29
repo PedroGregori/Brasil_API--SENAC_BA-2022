@@ -14,9 +14,8 @@ def cep():
         print('::::::::::|Busca por CEP|::::::::::')
         cep = input('Digite o CEP: ')
         cep_lst = brasil_api.getCEP(cep)
-        for c in cep_lst:
-            c.print()
-    
+        cep_lst.print()
+        #print(cep_lst)    
 def cnpj():
         os.system('cls')
         ('::::::::::|Busca por CNPJ|::::::::::')

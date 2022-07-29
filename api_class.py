@@ -20,16 +20,6 @@ class Bank():
             f"Nome: {self.name}, Code.: {self.code}")
     
 class Cep():
-    """
-    {
-        "cep": "89010025",
-        "state": "SC",
-        "city": "Blumenau",
-        "neighborhood": "Centro",
-        "street": "Rua Doutor Luiz de Freitas Melro",
-        "service": "viacep"
-    }
-    """
     def __init__(self, cep, state, city, neighborhood, street, service):
         self.cep = cep
         self.state = state
@@ -39,9 +29,10 @@ class Cep():
         self.service = service
     
     def print(self):
-        print(f'CEP: {self.cep}\n \
-            Estado: {self.state}\n \
-            Cidade: {self.city}\n \
-            Região: {self.neighborhood}\n\
-            Rua: {self.street}\n \
-            Serviço: {self.service}')
+        print(f"CEP: {self.cep}")
+        print(f"Estado: {self.state}")
+        print(f"Cidade: {self.city}")
+        print(f"Região: {self.neighborhood}")
+        print(f"Rua: {self.street}")
+        print(f"Serviço: {self.service}")
+    
